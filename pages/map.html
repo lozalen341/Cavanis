@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicaciones - Alojamiento Estudiantes Dubái</title>
+    <link rel="stylesheet" href="../style/map.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="../index.html">← Inicio</a>
+            <a href="#map">📍 Ver Mapa</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="header">
+        <h1>Ubicaciones Estratégicas en Dubái</h1>
+        <p>Propiedades cerca de universidades, playas y zonas clave de la ciudad</p>
+    </section>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        
+        <!-- Properties Section -->
+        <section class="properties-section">
+            <h2 class="section-title">Nuestras Propiedades Disponibles</h2>
+            
+            <div class="properties-grid">
+                <!-- Property 1 -->
+                <div class="property-card" onclick="showMap('downtown')">
+                    <div class="property-image">🏙️</div>
+                    <div class="property-content">
+                        <h3 class="property-title">Downtown Apartment</h3>
+                        <span class="property-type">Apartamento</span>
+                        
+                        <div class="property-details">
+                            <span class="detail-item">🛏️ 2 Habitaciones</span>
+                            <span class="detail-item">🚿 2 Baños</span>
+                            <span class="detail-item">📏 85 m²</span>
+                        </div>
+
+                        <div class="amenities">
+                            <span class="amenity-tag">🏊 Piscina</span>
+                            <span class="amenity-tag">💪 Gimnasio</span>
+                            <span class="amenity-tag">🅿️ Parking</span>
+                            <span class="amenity-tag">📶 WiFi</span>
+                        </div>
+
+                        <div class="property-footer">
+                            <div class="price">
+                                $1,200<span class="price-period">/mes</span>
+                            </div>
+                            <button class="map-button">📍 Ver en Mapa</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 2 -->
+                <div class="property-card" onclick="showMap('marina')">
+                    <div class="property-image">🌊</div>
+                    <div class="property-content">
+                        <h3 class="property-title">Marina View Villa</h3>
+                        <span class="property-type">Villa</span>
+                        
+                        <div class="property-details">
+                            <span class="detail-item">🛏️ 4 Habitaciones</span>
+                            <span class="detail-item">🚿 3 Baños</span>
+                            <span class="detail-item">📏 180 m²</span>
+                        </div>
+
+                        <div class="amenities">
+                            <span class="amenity-tag">🏊 Piscina Privada</span>
+                            <span class="amenity-tag">🌅 Vista al Mar</span>
+                            <span class="amenity-tag">🏖️ Acceso Playa</span>
+                            <span class="amenity-tag">🔒 Seguridad 24/7</span>
+                        </div>
+
+                        <div class="property-footer">
+                            <div class="price">
+                                $2,500<span class="price-period">/mes</span>
+                            </div>
+                            <button class="map-button">📍 Ver en Mapa</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 3 -->
+                <div class="property-card" onclick="showMap('academic')">
+                    <div class="property-image">🎓</div>
+                    <div class="property-content">
+                        <h3 class="property-title">Academic District Studio</h3>
+                        <span class="property-type">Estudio</span>
+                        
+                        <div class="property-details">
+                            <span class="detail-item">🛏️ 1 Habitación</span>
+                            <span class="detail-item">🚿 1 Baño</span>
+                            <span class="detail-item">📏 45 m²</span>
+                        </div>
+
+                        <div class="amenities">
+                            <span class="amenity-tag">📚 Cerca Universidades</span>
+                            <span class="amenity-tag">🚇 Metro Cercano</span>
+                            <span class="amenity-tag">🏪 Zona Comercial</span>
+                            <span class="amenity-tag">📶 WiFi Alta Velocidad</span>
+                        </div>
+
+                        <div class="property-footer">
+                            <div class="price">
+                                $900<span class="price-period">/mes</span>
+                            </div>
+                            <button class="map-button">📍 Ver en Mapa</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-section" id="map">
+            <h2 class="section-title">Mapa Interactivo de Dubái</h2>
+            <p style="text-align: center; color: #8B95A5; margin-bottom: 30px;">
+                Explora la ubicación de nuestras propiedades y su cercanía a puntos clave
+            </p>
+
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div class="map-icon">🗺️</div>
+                    <h3>Mapa Interactivo de Dubái</h3>
+                    <p style="margin-top: 10px;">Haz clic en "Ver en Mapa" en cualquier propiedad</p>
+                    <p style="font-size: 0.9em; margin-top: 20px; max-width: 500px; text-align: center;">
+                        Este mapa mostrará la ubicación exacta de la propiedad seleccionada<br>
+                        y las distancias a universidades, aeropuerto, zonas comerciales y playas
+                    </p>
+                </div>
+            </div>
+
+            <!-- Distances Info -->
+            <div class="distances-grid">
+                <div class="distance-card">
+                    <div class="distance-icon">✈️</div>
+                    <div class="distance-info">
+                        <h4>Aeropuerto Internacional</h4>
+                        <p>15-25 min</p>
+                    </div>
+                </div>
+
+                <div class="distance-card">
+                    <div class="distance-icon">🎓</div>
+                    <div class="distance-info">
+                        <h4>Universidades Principales</h4>
+                        <p>5-15 min</p>
+                    </div>
+                </div>
+
+                <div class="distance-card">
+                    <div class="distance-icon">🏖️</div>
+                    <div class="distance-info">
+                        <h4>Playa Más Cercana</h4>
+                        <p>10-20 min</p>
+                    </div>
+                </div>
+
+                <div class="distance-card">
+                    <div class="distance-icon">🛍️</div>
+                    <div class="distance-info">
+                        <h4>Dubai Mall</h4>
+                        <p>8-18 min</p>
+                    </div>
+                </div>
+
+                <div class="distance-card">
+                    <div class="distance-icon">🚇</div>
+                    <div class="distance-info">
+                        <h4>Estación de Metro</h4>
+                        <p>3-10 min</p>
+                    </div>
+                </div>
+
+                <div class="distance-card">
+                    <div class="distance-icon">🏥</div>
+                    <div class="distance-info">
+                        <h4>Hospitales</h4>
+                        <p>5-12 min</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Locations -->
+        <section class="key-locations">
+            <h2 class="section-title">Puntos Clave de Dubái</h2>
+            <p style="text-align: center; color: #8B95A5; margin-bottom: 30px;">
+                Todas nuestras propiedades están estratégicamente ubicadas cerca de:
+            </p>
+
+            <div class="locations-grid">
+                <div class="location-item">
+                    <div class="location-item-icon">🎓</div>
+                    <h4>Universidades</h4>
+                    <p>Dubai International<br>Academic City</p>
+                </div>
+
+                <div class="location-item">
+                    <div class="location-item-icon">🏢</div>
+                    <h4>Burj Khalifa</h4>
+                    <p>Torre más alta<br>del mundo</p>
+                </div>
+
+                <div class="location-item">
+                    <div class="location-item-icon">🏖️</div>
+                    <h4>Jumeirah Beach</h4>
+                    <p>Playas de<br>arena blanca</p>
+                </div>
+
+                <div class="location-item">
+                    <div class="location-item-icon">🛍️</div>
+                    <h4>Dubai Mall</h4>
+                    <p>Centro comercial<br>más grande</p>
+                </div>
+
+                <div class="location-item">
+                    <div class="location-item-icon">🌴</div>
+                    <h4>Palm Jumeirah</h4>
+                    <p>Isla artificial<br>icónica</p>
+                </div>
+
+                <div class="location-item">
+                    <div class="location-item-icon">✈️</div>
+                    <h4>DXB Airport</h4>
+                    <p>Aeropuerto<br>Internacional</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Modal for Map Details -->
+    <div class="modal" id="mapModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Ubicación de la Propiedad</h2>
+                <button class="close-modal" onclick="closeModal()">×</button>
+            </div>
+            
+            <div id="modalBody">
+                <div style="background: #F5F7FA; padding: 30px; border-radius: 15px; text-align: center;">
+                    <div style="font-size: 4em; margin-bottom: 20px;">📍</div>
+                    <h3 style="color: #1B3A52; margin-bottom: 15px;">Información de Ubicación</h3>
+                    <p style="color: #8B95A5; line-height: 1.8;" id="locationDetails"></p>
+                    
+                    <div style="margin-top: 25px; padding-top: 25px; border-top: 2px solid #e2e8f0;">
+                        <a href="https://www.google.com/maps/place/Dubai" target="_blank" 
+                           style="display: inline-block; background: #FF6B35; color: white; padding: 12px 30px; 
+                                  border-radius: 25px; text-decoration: none; transition: all 0.3s;">
+                            🗺️ Abrir en Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const locationData = {
+            downtown: {
+                title: "Downtown Apartment",
+                details: "Ubicado en el corazón de Dubái, a 5 minutos del Burj Khalifa y Dubai Mall. Excelente conexión de transporte público con estación de metro a 3 minutos caminando. Universidad más cercana a 10 minutos en metro. Zona comercial, restaurantes y servicios a pie."
+            },
+            marina: {
+                title: "Marina View Villa",
+                details: "En la exclusiva zona de Dubai Marina, con acceso directo a la playa. A 15 minutos del Aeropuerto Internacional y 8 minutos de Dubai Internet City (zona universitaria). Vista panorámica al mar, cerca de centros comerciales y vida nocturna."
+            },
+            academic: {
+                title: "Academic District Studio",
+                details: "Ubicado en Dubai International Academic City, rodeado de universidades y centros educativos. Metro a 5 minutos, aeropuerto a 20 minutos. Zona tranquila ideal para estudiantes, con bibliotecas, cafeterías y espacios de estudio cercanos."
+            }
+        };
+
+        function showMap(location) {
+            const modal = document.getElementById('mapModal');
+            const title = document.getElementById('modalTitle');
+            const details = document.getElementById('locationDetails');
+            
+            const data = locationData[location];
+            title.textContent = data.title;
+            details.textContent = data.details;
+            
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('mapModal');
+            modal.classList.remove('active');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('mapModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

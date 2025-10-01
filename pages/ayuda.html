@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai Student Housing - Servicios Integrales de Adaptación</title>
+    <link rel="stylesheet" href="../style/ayuda.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🏠 Dubai Student Housing</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#proceso">Proceso</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Servicio Integral de Adaptación y Bienestar</h1>
+            <p>Más que alojamiento: tu acompañamiento completo para una experiencia exitosa en Dubái. Desde trámites hasta integración cultural, estamos contigo en cada paso.</p>
+            <button class="cta-button" onclick="scrollToServices()">Conoce Nuestros Servicios</button>
+        </div>
+    </section>
+
+    <!-- Main Services Section -->
+    <section id="servicios" class="services-main">
+        <h2 class="section-title">Nuestros Servicios Integrales</h2>
+        <p class="section-subtitle">Facilitamos tu adaptación al nuevo entorno cultural y social con un acompañamiento personalizado en cada área</p>
+        
+        <div class="services-grid">
+            <!-- Service 1 -->
+            <div class="service-card-detailed">
+                <div class="service-header">
+                    <div class="service-icon-large">📋</div>
+                    <h3>Asesoría Migratoria</h3>
+                </div>
+                <p class="service-description">Te acompañamos en todos los trámites legales para que tu estadía sea completamente legal y sin preocupaciones.</p>
+                <ul class="service-features">
+                    <li>Gestión de visas estudiantiles</li>
+                    <li>Permisos de residencia</li>
+                    <li>Seguros médicos obligatorios</li>
+                    <li>Documentación oficial</li>
+                </ul>
+                <button class="learn-more-btn" onclick="openModal('migracion')">Más Información</button>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card-detailed">
+                <div class="service-header">
+                    <div class="service-icon-large">🌍</div>
+                    <h3>Orientación Cultural</h3>
+                </div>
+                <p class="service-description">Programas diseñados para facilitar tu integración en la sociedad emiratí y en el ambiente multicultural de Dubái.</p>
+                <ul class="service-features">
+                    <li>Talleres de inmersión cultural</li>
+                    <li>Clases de idioma (árabe/inglés)</li>
+                    <li>Normas y costumbres locales</li>
+                    <li>Etiqueta y protocolo emiratí</li>
+                </ul>
+                <button class="learn-more-btn" onclick="openModal('cultural')">Más Información</button>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card-detailed">
+                <div class="service-header">
+                    <div class="service-icon-large">🎉</div>
+                    <h3>Actividades Sociales</h3>
+                </div>
+                <p class="service-description">Eventos y encuentros organizados para crear conexiones significativas con otros estudiantes internacionales.</p>
+                <ul class="service-features">
+                    <li>Eventos de networking mensual</li>
+                    <li>Excursiones culturales</li>
+                    <li>Actividades deportivas grupales</li>
+                    <li>Celebraciones internacionales</li>
+                </ul>
+                <button class="learn-more-btn" onclick="openModal('social')">Más Información</button>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-card-detailed">
+                <div class="service-header">
+                    <div class="service-icon-large">💚</div>
+                    <h3>Bienestar Psicológico</h3>
+                </div>
+                <p class="service-description">Apoyo profesional para tu salud mental y emocional durante toda tu experiencia de intercambio.</p>
+                <ul class="service-features">
+                    <li>Consultas con psicólogos certificados</li>
+                    <li>Sesiones de manejo de estrés</li>
+                    <li>Grupos de apoyo entre pares</li>
+                    <li>Línea de apoyo 24/7</li>
+                </ul>
+                <button class="learn-more-btn" onclick="openModal('psicologico')">Más Información</button>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-card-detailed">
+                <div class="service-header">
+                    <div class="service-icon-large">📚</div>
+                    <h3>Mentoría Académica</h3>
+                </div>
+                <p class="service-description">Apoyo personalizado para maximizar tu rendimiento académico y aprovechar al máximo tu educación.</p>
+                <ul class="service-features">
+                    <li>Tutorías en materias clave</li>
+                    <li>Técnicas de estudio efectivas</li>
+                    <li>Orientación para proyectos</li>
+                    <li>Preparación para exámenes</li>
+                </ul>
+                <button class="learn-more-btn" onclick="openModal('academico')">Más Información</button>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="service-card-detailed">
+                <div class="service-header">
+                    <div class="service-icon-large">🏡</div>
+                    <h3>Alojamiento Premium</h3>
+                </div>
+                <p class="service-description">Espacios cómodos, seguros y estratégicamente ubicados para facilitar tu vida estudiantil en Dubái.</p>
+                <ul class="service-features">
+                    <li>Habitaciones completamente equipadas</li>
+                    <li>Zonas de estudio compartidas</li>
+                    <li>Servicios incluidos (WiFi, limpieza)</li>
+                    <li>Seguridad 24/7</li>
+                </ul>
+                <button class="learn-more-btn" onclick="openModal('alojamiento')">Más Información</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="proceso" class="process-section">
+        <h2 class="section-title" style="color: #D4AF37;">¿Cómo Funciona?</h2>
+        <p class="section-subtitle" style="color: #F5F7FA;">Un proceso simple y estructurado para tu tranquilidad</p>
+
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Contacto Inicial</h3>
+                    <p>Completa nuestro formulario y cuéntanos sobre tu beca y necesidades específicas.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Evaluación Personalizada</h3>
+                    <p>Analizamos tu situación y diseñamos un plan de servicios adaptado a ti.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Preparación Pre-Llegada</h3>
+                    <p>Iniciamos trámites migratorios y te preparamos culturalmente antes de tu viaje.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Bienvenida en Dubái</h3>
+                    <p>Te recibimos, instalamos en tu alojamiento y te orientamos en la ciudad.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3>Acompañamiento Continuo</h3>
+                    <p>Apoyo constante en todas las áreas durante toda tu estadía académica.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="benefits-section">
+        <h2 class="section-title">¿Por Qué Elegirnos?</h2>
+        <p class="section-subtitle">Ventajas que marcan la diferencia en tu experiencia</p>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">⏰</div>
+                <h4>Ahorro de Tiempo</h4>
+                <p>Gestionamos todos los trámites complejos por ti</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🛡️</div>
+                <h4>Seguridad Total</h4>
+                <p>Entorno seguro y monitoreado constantemente</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🤝</div>
+                <h4>Red de Contactos</h4>
+                <p>Conexiones con estudiantes de todo el mundo</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">📈</div>
+                <h4>Éxito Académico</h4>
+                <p>Apoyo continuo para tu rendimiento estudiantil</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">💼</div>
+                <h4>Desarrollo Profesional</h4>
+                <p>Eventos de networking y oportunidades laborales</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🌟</div>
+                <h4>Experiencia Completa</h4>
+                <p>Todo lo necesario en un solo lugar</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section>
+        <div class="cta-section">
+            <h2>¿Listo para tu Aventura en Dubái?</h2>
+            <p>Únete a cientos de estudiantes que ya confían en nuestro servicio integral</p>
+            <div class="cta-buttons">
+                <button class="btn-primary" onclick="openContactModal()">Solicitar Información</button>
+                <button class="btn-secondary" onclick="scrollToServices()">Ver Todos los Servicios</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <h3 id="modalTitle">Título del Servicio</h3>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeContactModal()">&times;</span>
+            <div class="modal-header">
+                <h3>Solicita Información</h3>
+            </div>
+            <div class="modal-body">
+                <form id="contactForm" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <input type="text" placeholder="Nombre completo" style="padding: 0.8rem; border: 1px solid #8B95A5; border-radius: 8px;" required>
+                    <input type="email" placeholder="Email" style="padding: 0.8rem; border: 1px solid #8B95A5; border-radius: 8px;" required>
+                    <input type="tel" placeholder="Teléfono" style="padding: 0.8rem; border: 1px solid #8B95A5; border-radius: 8px;">
+                    <select style="padding: 0.8rem; border: 1px solid #8B95A5; border-radius: 8px;" required>
+                        <option value="">Servicio de interés</option>
+                        <option value="migracion">Asesoría Migratoria</option>
+                        <option value="cultural">Orientación Cultural</option>
+                        <option value="social">Actividades Sociales</option>
+                        <option value="psicologico">Bienestar Psicológico</option>
+                        <option value="academico">Mentoría Académica</option>
+                        <option value="alojamiento">Alojamiento</option>
+                        <option value="todo">Paquete Completo</option>
+                    </select>
+                    <textarea placeholder="Cuéntanos sobre tu situación" style="padding: 0.8rem; border: 1px solid #8B95A5; border-radius: 8px; min-height: 100px;" required></textarea>
+                    <button type="submit" class="cta-button" style="margin-top: 1rem;">Enviar Solicitud</button>
+                    <div id="successMsg" style="display: none; background: #2ECC71; color: white; padding: 1rem; border-radius: 8px; text-align: center;">
+                        ✓ ¡Solicitud enviada! Nos contactaremos pronto.
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Dubai Student Housing. Todos los derechos reservados.</p>
+        <p style="margin-top: 0.5rem; color: #8B95A5;">Tu éxito en Dubái, nuestro compromiso</p>
+    </footer>
+
+    <script>
+        // Modal Content
+        const modalContent = {
+            migracion: {
+                title: 'Asesoría Migratoria Personalizada',
+                body: `
+                    <p style="margin-bottom: 1rem;"><strong>Facilitamos todos tus trámites legales en Dubái</strong></p>
+                    <p>Nuestro equipo de expertos en inmigración te guía paso a paso:</p>
+                    <ul>
+                        <li><strong>Visas Estudiantiles:</strong> Tramitación completa y seguimiento hasta su aprobación</li>
+                        <li><strong>Permisos de Residencia:</strong> Gestión de Emirates ID y documentación oficial</li>
+                        <li><strong>Seguros Médicos:</strong> Contratación de seguros obligatorios con las mejores coberturas</li>
+                        <li><strong>Asesoría Legal:</strong> Consultas con abogados especializados en inmigración</li>
+                        <li><strong>Renovaciones:</strong> Recordatorios y gestión de renovaciones necesarias</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><em>Evita errores costosos y ahorra tiempo con nuestro servicio especializado.</em></p>
+                `
+            },
+            cultural: {
+                title: 'Programas de Orientación Cultural y Lingüística',
+                body: `
+                    <p style="margin-bottom: 1rem;"><strong>Integración exitosa en la sociedad emiratí</strong></p>
+                    <p>Te preparamos para vivir cómodamente en un ambiente multicultural:</p>
+                    <ul>
+                        <li><strong>Talleres de Inmersión:</strong> Sesiones semanales sobre cultura y tradiciones locales</li>
+                        <li><strong>Clases de Idiomas:</strong> Árabe básico e inglés avanzado según tu nivel</li>
+                        <li><strong>Normas Sociales:</strong> Código de vestimenta, comportamiento público y etiqueta</li>
+                        <li><strong>Festividades Locales:</strong> Participación en eventos culturales y religiosos</li>
+                        <li><strong>Gastronomía:</strong> Introducción a la cocina emiratí y opciones multiculturales</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><em>Comprende y respeta la cultura local mientras disfrutas de tu experiencia internacional.</em></p>
+                `
+            },
+            social: {
+                title: 'Actividades Sociales y Recreativas',
+                body: `
+                    <p style="margin-bottom: 1rem;"><strong>Crea conexiones significativas y recuerdos inolvidables</strong></p>
+                    <p>Organizamos eventos diseñados para tu integración social:</p>
+                    <ul>
+                        <li><strong>Networking Mensual:</strong> Encuentros con profesionales y otros estudiantes internacionales</li>
+                        <li><strong>Excursiones Culturales:</strong> Visitas a museos, desierto, playas y lugares emblemáticos</li>
+                        <li><strong>Deportes y Fitness:</strong> Torneos, yoga, running clubs y actividades al aire libre</li>
+                        <li><strong>Noches Temáticas:</strong> Celebraciones de diferentes culturas y países</li>
+                        <li><strong>Voluntariado:</strong> Oportunidades para contribuir a la comunidad local</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><em>Tu red de contactos global comienza aquí.</em></p>
+                `
+            },
+            psicologico: {
+                title: 'Soporte Psicológico y Emocional',
+                body: `
+                    <p style="margin-bottom: 1rem;"><strong>Tu bienestar mental es nuestra prioridad</strong></p>
+                    <p>Apoyo profesional para enfrentar los desafíos de estudiar en el extranjero:</p>
+                    <ul>
+                        <li><strong>Consultas Individuales:</strong> Sesiones con psicólogos certificados en múltiples idiomas</li>
+                        <li><strong>Manejo de Estrés:</strong> Técnicas de mindfulness, meditación y relajación</li>
+                        <li><strong>Grupos de Apoyo:</strong> Espacios seguros para compartir experiencias con otros estudiantes</li>
+                        <li><strong>Adaptación Cultural:</strong> Ayuda para superar el choque cultural y la nostalgia</li>
+                        <li><strong>Línea de Emergencia:</strong> Apoyo disponible 24/7 para situaciones críticas</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><em>Confidencial, profesional y siempre a tu disposición.</em></p>
+                `
+            },
+            academico: {
+                title: 'Servicio de Mentoría y Tutoría Académica',
+                body: `
+                    <p style="margin-bottom: 1rem;"><strong>Maximiza tu potencial académico</strong></p>
+                    <p>Apoyo personalizado para alcanzar la excelencia en tus estudios:</p>
+                    <ul>
+                        <li><strong>Tutorías Especializadas:</strong> Apoyo en matemáticas, ciencias, humanidades y más</li>
+                        <li><strong>Técnicas de Estudio:</strong> Métodos efectivos de organización y aprendizaje</li>
+                        <li><strong>Preparación de Exámenes:</strong> Estrategias para mejorar tu rendimiento académico</li>
+                        <li><strong>Proyectos de Investigación:</strong> Guía para trabajos finales y tesis</li>
+                        <li><strong>Orientación Profesional:</strong> Asesoría sobre carreras y oportunidades futuras</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><em>Convierte tu beca en una experiencia académica excepcional.</em></p>
+                `
+            },
+            alojamiento: {
+                title: 'Alojamiento Premium y Servicios Incluidos',
+                body: `
+                    <p style="margin-bottom: 1rem;"><strong>Tu hogar lejos de casa</strong></p>
+                    <p>Espacios diseñados pensando en tu comodidad y necesidades:</p>
+                    <ul>
+                        <li><strong>Habitaciones Equipadas:</strong> Cama, escritorio, armario, aire acondicionado y más</li>
+                        <li><strong>Áreas Comunes:</strong> Cocina compartida, salas de estudio, espacios recreativos</li>
+                        <li><strong>Servicios Incluidos:</strong> WiFi de alta velocidad, limpieza semanal, mantenimiento</li>
+                        <li><strong>Ubicación Estratégica:</strong> Cerca de universidades y transporte público</li>
+                        <li><strong>Seguridad 24/7:</strong> Vigilancia, acceso controlado y personal de emergencia</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><em>Concentráte en tus estudios, nosotros nos encargamos del resto.</em></p>
+                `
+            }
+        };
+
+        // Modal Functions
+        function openModal(service) {
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('modalTitle');
+            const body = document.getElementById('modalBody');
+            
+            if (modalContent[service]) {
+                title.textContent = modalContent[service].title;
+                body.innerHTML = modalContent[service].body;
+                modal.style.display = 'block';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        function openContactModal() {
+            document.getElementById('contactModal').style.display = 'block';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            const contactModal = document.getElementById('contactModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+            if (event.target == contactModal) {
+                closeContactModal();
+            }
+        }
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const successMsg = document.getElementById('successMsg');
+            successMsg.style.display = 'block';
+            this.reset();
+            
+            setTimeout(() => {
+                successMsg.style.display = 'none';
+                closeContactModal();
+            }, 3000);
+        });
+
+        // Smooth scroll
+        function scrollToServices() {
+            document.getElementById('servicios').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card-detailed, .benefit-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

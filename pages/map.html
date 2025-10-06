@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ubicaciones - Alojamiento Estudiantes Dubái</title>
-    <link rel="stylesheet" href="../style/map.css">
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="ayuda.css">
+
 </head>
+
 <body>
     <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="../index.html">← Inicio</a>
-            <a href="#map">📍 Ver Mapa</a>
-        </div>
-    </nav>
+    <header>
+        <nav>
+            <div class="logo">🏠 Dubai Student Housing</div>
+            <ul class="nav-links">
+                <li><a href="ayuda.html#inicio">Inicio</a></li>
+                <li><a href="ayuda.html#servicios">Servicios</a></li>
+                <li><a href="ayuda.html#proceso">Proceso</a></li>
+                <li><a href="ayuda.html#beneficios">Beneficios</a></li>
+                <li><a href="map.html">Contratar Servicio</a></li>
+            </ul>
+        </nav>
+    </header>
+
 
     <!-- Header -->
     <section class="header">
@@ -26,11 +35,11 @@
 
     <!-- Main Container -->
     <div class="main-container">
-        
+
         <!-- Properties Section -->
         <section class="properties-section">
             <h2 class="section-title">Nuestras Propiedades Disponibles</h2>
-            
+
             <div class="properties-grid">
                 <!-- Property 1 -->
                 <div class="property-card" onclick="showMap('downtown')">
@@ -38,7 +47,7 @@
                     <div class="property-content">
                         <h3 class="property-title">Downtown Apartment</h3>
                         <span class="property-type">Apartamento</span>
-                        
+
                         <div class="property-details">
                             <span class="detail-item">🛏️ 2 Habitaciones</span>
                             <span class="detail-item">🚿 2 Baños</span>
@@ -67,7 +76,7 @@
                     <div class="property-content">
                         <h3 class="property-title">Marina View Villa</h3>
                         <span class="property-type">Villa</span>
-                        
+
                         <div class="property-details">
                             <span class="detail-item">🛏️ 4 Habitaciones</span>
                             <span class="detail-item">🚿 3 Baños</span>
@@ -96,7 +105,7 @@
                     <div class="property-content">
                         <h3 class="property-title">Academic District Studio</h3>
                         <span class="property-type">Estudio</span>
-                        
+
                         <div class="property-details">
                             <span class="detail-item">🛏️ 1 Habitación</span>
                             <span class="detail-item">🚿 1 Baño</span>
@@ -121,26 +130,23 @@
             </div>
         </section>
 
-        <!-- Map Section -->
-        <section class="map-section" id="map">
+        <section class="map-section">
             <h2 class="section-title">Mapa Interactivo de Dubái</h2>
-            <p style="text-align: center; color: #8B95A5; margin-bottom: 30px;">
+            <p class="section-subtitle">
                 Explora la ubicación de nuestras propiedades y su cercanía a puntos clave
             </p>
 
             <div class="map-container">
-                <div class="map-placeholder">
-                    <div class="map-icon">🗺️</div>
-                    <h3>Mapa Interactivo de Dubái</h3>
-                    <p style="margin-top: 10px;">Haz clic en "Ver en Mapa" en cualquier propiedad</p>
-                    <p style="font-size: 0.9em; margin-top: 20px; max-width: 500px; text-align: center;">
-                        Este mapa mostrará la ubicación exacta de la propiedad seleccionada<br>
-                        y las distancias a universidades, aeropuerto, zonas comerciales y playas
-                    </p>
+                <div id="map"></div>
+
+                <div class="map-controls">
+                    <button class="property-btn active" data-property="marina">Dubai Marina</button>
+                    <button class="property-btn" data-property="downtown">Downtown Dubai</button>
+                    <button class="property-btn" data-property="jbr">JBR Beach</button>
+                    <button class="property-btn" data-property="palm">Palm Jumeirah</button>
                 </div>
             </div>
 
-            <!-- Distances Info -->
             <div class="distances-grid">
                 <div class="distance-card">
                     <div class="distance-icon">✈️</div>
@@ -191,6 +197,7 @@
                 </div>
             </div>
         </section>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
         <!-- Key Locations -->
         <section class="key-locations">
@@ -247,16 +254,15 @@
                 <h2 id="modalTitle">Ubicación de la Propiedad</h2>
                 <button class="close-modal" onclick="closeModal()">×</button>
             </div>
-            
+
             <div id="modalBody">
                 <div style="background: #F5F7FA; padding: 30px; border-radius: 15px; text-align: center;">
                     <div style="font-size: 4em; margin-bottom: 20px;">📍</div>
                     <h3 style="color: #1B3A52; margin-bottom: 15px;">Información de Ubicación</h3>
                     <p style="color: #8B95A5; line-height: 1.8;" id="locationDetails"></p>
-                    
+
                     <div style="margin-top: 25px; padding-top: 25px; border-top: 2px solid #e2e8f0;">
-                        <a href="https://www.google.com/maps/place/Dubai" target="_blank" 
-                           style="display: inline-block; background: #FF6B35; color: white; padding: 12px 30px; 
+                        <a href="https://www.google.com/maps/place/Dubai" target="_blank" style="display: inline-block; background: #FF6B35; color: white; padding: 12px 30px; 
                                   border-radius: 25px; text-decoration: none; transition: all 0.3s;">
                             🗺️ Abrir en Google Maps
                         </a>
@@ -286,11 +292,11 @@
             const modal = document.getElementById('mapModal');
             const title = document.getElementById('modalTitle');
             const details = document.getElementById('locationDetails');
-            
+
             const data = locationData[location];
             title.textContent = data.title;
             details.textContent = data.details;
-            
+
             modal.classList.add('active');
         }
 
@@ -300,11 +306,270 @@
         }
 
         // Close modal when clicking outside
-        document.getElementById('mapModal').addEventListener('click', function(e) {
+        document.getElementById('mapModal').addEventListener('click', function (e) {
             if (e.target === this) {
                 closeModal();
             }
         });
+
+        // Inicializar mapa centrado en Dubai
+        const map = L.map('map').setView([25.2048, 55.2708], 11);
+
+        // Añadir capa de mapa (OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 19
+        }).addTo(map);
+
+        // Icono personalizado para propiedades
+        const propertyIcon = L.icon({
+            iconUrl: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjNjY3ZWVhIj48cGF0aCBkPSJNMTIgMkM4LjEzIDIgNSA1LjEzIDUgOWMwIDUuMjUgNyAxMyA3IDEzczctNy43NSA3LTEzYzAtMy44Ny0zLjEzLTctNy03em0wIDkuNWMtMS4zOCAwLTIuNS0xLjEyLTIuNS0yLjVzMS4xMi0yLjUgMi41LTIuNSAyLjUgMS4xMiAyLjUgMi41LTEuMTIgMi41LTIuNSAyLjV6Ii8+PC9zdmc+',
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        });
+
+        // Propiedades con coordenadas
+        const properties = {
+            marina: {
+                coords: [25.0802, 55.1398],
+                name: 'Dubai Marina',
+                description: 'Zona residencial de lujo con vistas al puerto deportivo',
+                price: 'Desde AED 1.5M'
+            },
+            downtown: {
+                coords: [25.1972, 55.2744],
+                name: 'Downtown Dubai',
+                description: 'Corazón de la ciudad, cerca del Burj Khalifa',
+                price: 'Desde AED 2.2M'
+            },
+            jbr: {
+                coords: [25.0779, 55.1287],
+                name: 'JBR Beach',
+                description: 'Primera línea de playa con vida urbana vibrante',
+                price: 'Desde AED 1.8M'
+            },
+            palm: {
+                coords: [25.1124, 55.1390],
+                name: 'Palm Jumeirah',
+                description: 'Isla artificial exclusiva con resorts de lujo',
+                price: 'Desde AED 3.5M'
+            }
+        };
+
+        // Marcadores y círculos de referencia
+        let markers = {};
+        let circles = {};
+
+        // Crear marcadores para todas las propiedades
+        Object.keys(properties).forEach(key => {
+            const prop = properties[key];
+            const marker = L.marker(prop.coords, { icon: propertyIcon })
+                .bindPopup(`
+                    <h3>${prop.name}</h3>
+                    <p>${prop.description}</p>
+                    <p><strong>${prop.price}</strong></p>
+                `);
+            markers[key] = marker;
+        });
+
+        // Mostrar primera propiedad por defecto
+        showProperty('marina');
+
+        function showProperty(propertyKey) {
+            // Limpiar marcadores y círculos anteriores
+            Object.values(markers).forEach(m => map.removeLayer(m));
+            Object.values(circles).forEach(c => map.removeLayer(c));
+
+            // Actualizar botones
+            document.querySelectorAll('.property-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Mostrar propiedad seleccionada
+            const prop = properties[propertyKey];
+            markers[propertyKey].addTo(map);
+
+            // Añadir círculo de área de influencia
+            const circle = L.circle(prop.coords, {
+                color: '#667eea',
+                fillColor: '#764ba2',
+                fillOpacity: 0.1,
+                radius: 3000
+            }).addTo(map);
+            circles[propertyKey] = circle;
+
+            // Centrar mapa en la propiedad
+            map.setView(prop.coords, 13);
+
+            // Abrir popup automáticamente
+            setTimeout(() => {
+                markers[propertyKey].openPopup();
+            }, 300);
+        }
+
+        // Añadir puntos de interés
+        const poiIcon = L.divIcon({
+            className: 'poi-icon',
+            html: '<div style="background: rgba(255,255,255,0.9); border-radius: 50%; width: 10px; height: 10px; border: 2px solid #667eea;"></div>',
+            iconSize: [10, 10]
+        });
+
+        // Algunos puntos de interés
+        const pois = [
+            { coords: [25.2532, 55.3657], name: 'Aeropuerto Internacional' },
+            { coords: [25.1984, 55.2796], name: 'Burj Khalifa' },
+            { coords: [25.1972, 55.2796], name: 'Dubai Mall' },
+            { coords: [25.0657, 55.1421], name: 'Playa JBR' }
+        ];
+
+        pois.forEach(poi => {
+            L.marker(poi.coords, { icon: poiIcon })
+                .bindPopup(`<strong>${poi.name}</strong>`)
+                .addTo(map);
+        });
+
+
+        function initMap() {
+            // Crear mapa centrado en Dubai
+            map = L.map('map').setView([25.2048, 55.2708], 11);
+
+            // Añadir capa de mapa
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors',
+                maxZoom: 19
+            }).addTo(map);
+
+            // Icono personalizado
+            const propertyIcon = L.icon({
+                iconUrl: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjMDBBOEE4Ij48cGF0aCBkPSJNMTIgMkM4LjEzIDIgNSA1LjEzIDUgOWMwIDUuMjUgNyAxMyA3IDEzczctNy43NSA3LTEzYzAtMy44Ny0zLjEzLTctNy03em0wIDkuNWMtMS4zOCAwLTIuNS0xLjEyLTIuNS0yLjVzMS4xMi0yLjUgMi41LTIuNSAyLjUgMS4xMiAyLjUgMi41LTEuMTIgMi41LTIuNSAyLjV6Ii8+PC9zdmc+',
+                iconSize: [32, 32],
+                iconAnchor: [16, 32],
+                popupAnchor: [0, -32]
+            });
+
+            // Propiedades
+            const properties = {
+                marina: {
+                    coords: [25.0802, 55.1398],
+                    name: 'Dubai Marina',
+                    description: 'Zona residencial de lujo con vistas al puerto deportivo',
+                    price: 'Desde $1,500/mes'
+                },
+                downtown: {
+                    coords: [25.1972, 55.2744],
+                    name: 'Downtown Dubai',
+                    description: 'Corazón de la ciudad, cerca del Burj Khalifa',
+                    price: 'Desde $1,200/mes'
+                },
+                jbr: {
+                    coords: [25.0779, 55.1287],
+                    name: 'JBR Beach',
+                    description: 'Primera línea de playa con vida urbana vibrante',
+                    price: 'Desde $1,800/mes'
+                },
+                palm: {
+                    coords: [25.1124, 55.1390],
+                    name: 'Palm Jumeirah',
+                    description: 'Isla artificial exclusiva con resorts de lujo',
+                    price: 'Desde $2,500/mes'
+                }
+            };
+
+            // Crear marcadores
+            Object.keys(properties).forEach(key => {
+                const prop = properties[key];
+                const marker = L.marker(prop.coords, { icon: propertyIcon })
+                    .bindPopup(`
+                        <h3>${prop.name}</h3>
+                        <p>${prop.description}</p>
+                        <p><strong>${prop.price}</strong></p>
+                    `);
+                markers[key] = marker;
+            });
+
+            // Puntos de interés
+            const poiIcon = L.divIcon({
+                className: 'poi-icon',
+                html: '<div style="background: #FF6B35; border-radius: 50%; width: 12px; height: 12px; border: 2px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.3);"></div>',
+                iconSize: [12, 12]
+            });
+
+            const pois = [
+                { coords: [25.2532, 55.3657], name: '✈️ Aeropuerto Internacional' },
+                { coords: [25.1984, 55.2796], name: '🏢 Burj Khalifa' },
+                { coords: [25.1972, 55.2796], name: '🛍️ Dubai Mall' },
+                { coords: [25.0657, 55.1421], name: '🏖️ Playa JBR' }
+            ];
+
+            pois.forEach(poi => {
+                L.marker(poi.coords, { icon: poiIcon })
+                    .bindPopup(`<strong>${poi.name}</strong>`)
+                    .addTo(map);
+            });
+
+            // Configurar botones
+            const buttons = document.querySelectorAll('.property-btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const property = this.getAttribute('data-property');
+                    showProperty(property);
+
+                    // Actualizar botón activo
+                    buttons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Mostrar primera propiedad
+            showProperty('marina');
+        }
+
+        function showProperty(propertyKey) {
+            // Limpiar marcadores y círculos
+            Object.values(markers).forEach(m => map.removeLayer(m));
+            Object.values(circles).forEach(c => map.removeLayer(c));
+
+            // Coordenadas de las propiedades
+            const coords = {
+                marina: [25.0802, 55.1398],
+                downtown: [25.1972, 55.2744],
+                jbr: [25.0779, 55.1287],
+                palm: [25.1124, 55.1390]
+            };
+
+            // Mostrar propiedad seleccionada
+            if (markers[propertyKey]) {
+                markers[propertyKey].addTo(map);
+
+                // Círculo de área de influencia
+                const circle = L.circle(coords[propertyKey], {
+                    color: '#00A8A8',
+                    fillColor: '#00A8A8',
+                    fillOpacity: 0.1,
+                    radius: 3000
+                }).addTo(map);
+                circles[propertyKey] = circle;
+
+                // Centrar mapa
+                map.setView(coords[propertyKey], 13);
+
+                // Abrir popup
+                setTimeout(() => {
+                    markers[propertyKey].openPopup();
+                }, 500);
+            }
+        }
+
+        // Inicializar cuando el DOM esté listo
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initMap);
+        } else {
+            initMap();
+        }
+
     </script>
 </body>
+
 </html>
